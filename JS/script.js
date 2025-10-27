@@ -1,18 +1,19 @@
-
-//Initialisation avec français par défaut et détection thème systèm
+//Initialisation avec français par défaut et détection thème système
 
 (function() {
-    
+    // Fonctions utilitaires
     function getSystemTheme() {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     
-    
-    const savedTheme = localStorage.getItem('portfolio-theme') || getSystemTheme();
+    // Récupérer les préférences - SEULEMENT si elles existent explicitement
+    const savedTheme = localStorage.getItem('portfolio-theme');
     const savedLanguage = localStorage.getItem('portfolio-language') || 'fr';
     
-    // Appliquer le thème et la langue immédiatement
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    // Appliquer SEULEMENT si sauvegardé explicitement
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
     document.documentElement.lang = savedLanguage;
     
     // Écouter les changements de préférences système pour le thème
@@ -41,14 +42,16 @@
     });
     
     function initializeButtons() {
+        const currentTheme = localStorage.getItem('portfolio-theme') || getSystemTheme();
+        
         // Bouton de thème
         const themeBtn = document.getElementById('theme-toggle');
         if (themeBtn) {
-            themeBtn.textContent = savedTheme === 'light' ? 'Dark' : 'Light';
+            themeBtn.textContent = currentTheme === 'light' ? 'Dark' : 'Light';
             
-            const titleKey = savedTheme === 'light' ? 'switch-to-dark' : 'switch-to-light';
+            const titleKey = currentTheme === 'light' ? 'switch-to-dark' : 'switch-to-light';
             const title = trad[savedLanguage]?.[titleKey] || 
-                         (savedTheme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair');
+                         (currentTheme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair');
             themeBtn.title = title;
         }
         

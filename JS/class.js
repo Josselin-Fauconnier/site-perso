@@ -64,6 +64,7 @@ class ThemeManager {
         this.currentTheme = localStorage.getItem('portfolio-theme') || 
                            (typeof getSystemTheme === 'function' ? getSystemTheme() : 'light');
         this.button = document.getElementById('theme-toggle');
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
         this.init();
     }
 
@@ -100,10 +101,14 @@ class ThemeManager {
     }
 
     updateButton() {
-        const nextTheme = this.currentTheme === 'light' ? 'Dark' : 'Light';
+        const currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
+        
+        // Utiliser les traductions pour le texte du bouton
+        const nextTheme = this.currentTheme === 'light' ? 
+            (currentLanguage === 'fr' ? 'Sombre' : 'Dark') : 
+            (currentLanguage === 'fr' ? 'Clair' : 'Light');
         this.button.textContent = nextTheme;
         
-        const currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
         const titleKey = this.currentTheme === 'light' ? 'switch-to-dark' : 'switch-to-light';
         const title = trad[currentLanguage]?.[titleKey] || 
                      (this.currentTheme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair');
