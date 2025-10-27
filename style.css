@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables par défaut basées sur les préférences système */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --button-bg: #f0f0f0;
+    --button-text: #333333;
+    --button-border: #cccccc;
+}
+
+/* Mode sombre automatique selon les préférences système */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --button-bg: #333333;
+        --button-text: #ffffff;
+        --button-border: #555555;
+    }
+}
+
+/* Thème clair explicite (priorité sur prefers-color-scheme) */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --button-bg: #f0f0f0;
+    --button-text: #333333;
+    --button-border: #cccccc;
+}
+
+/* Thème sombre explicite (priorité sur prefers-color-scheme) */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+    --button-border: #555555;
+}
+
+/* Application des variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styles pour la navigation */
+header {
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#nav-theme ul,
+#nav-site ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav li {
+    display: inline;
+}
+
+/* Styles pour les boutons */
+.theme-btn, .language-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--button-border);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 60px;
+    transition: all 0.3s ease;
+}
+
+/* État de chargement pour éviter les boutons vides visuellement */
+.theme-btn:empty, .language-btn:empty {
+    opacity: 0.7;
+}
+
+.theme-btn:hover, .language-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* Styles pour l'accessibilité */
+.theme-btn:focus, .language-btn:focus {
+    outline: 2px solid #007acc;
+    outline-offset: 2px;
+}
+
