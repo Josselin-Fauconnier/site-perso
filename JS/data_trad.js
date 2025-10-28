@@ -2,7 +2,7 @@ const trad = {
     fr: {
         'title-portfolio': 'Portfolio de Josselin Fauconnier',
 
-        // Messages d'accessibilitÃ© pour les boutons
+        // Messages d'accessibilité pour les boutons
         'switch-to-english': 'Passer en anglais',
         'switch-to-dark': 'Passer en mode sombre',
         'switch-to-light': 'Passer en mode clair',
@@ -16,7 +16,7 @@ const trad = {
         // Navigation du site
         'nav-presentation': 'Présentation',
         'nav-skills': 'Connaissances métier',
-        'nav-projects': 'Dernier projet mis à jour',
+        'nav-project': 'Dernier projet mis à jour',
         'nav-contact': 'Me contacter',
         
         // Section présentation
@@ -29,7 +29,7 @@ const trad = {
 
         // Section connaissance
 
-        'h2SW': 'Connaissances/lecture',
+        'h2SW': 'Connaissances métier',
         'CP': 'Coder proprement',
         'PP': 'Le programmeur pragmatique',
         'coding' : "Langages",
@@ -70,7 +70,7 @@ const trad = {
 
         // Section connaissances
 
-        'h2SW': 'knowledge/reading',
+        'h2SW': 'knowledge',
         'CP': 'clean code',
         'PP': 'The pragmatic programmer',
         'coding' :'Computer language',

@@ -47,7 +47,7 @@
         // Bouton de thème
         const themeBtn = document.getElementById('theme-toggle');
         if (themeBtn) {
-            themeBtn.textContent = currentTheme === 'light' ? 'Dark' : 'Light';
+            themeBtn.textContent = currentTheme === 'Dark' ? 'Light' : 'Dark';
             
             const titleKey = currentTheme === 'light' ? 'switch-to-dark' : 'switch-to-light';
             const title = trad[savedLanguage]?.[titleKey] || 

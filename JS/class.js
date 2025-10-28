@@ -62,7 +62,7 @@ class ThemeManager {
     constructor() {
         // Priorité : localStorage > système > light
         this.currentTheme = localStorage.getItem('portfolio-theme') || 
-                           (typeof getSystemTheme === 'function' ? getSystemTheme() : 'light');
+                           (typeof getSystemTheme === 'function' ? getSystemTheme() : 'dark');
         this.button = document.getElementById('theme-toggle');
         document.documentElement.setAttribute('data-theme', this.currentTheme);
         this.init();
@@ -79,7 +79,7 @@ class ThemeManager {
     }
 
     toggleTheme() {
-        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.setTheme(newTheme);
     }
 
@@ -96,7 +96,7 @@ class ThemeManager {
     // Méthode pour revenir aux préférences système
     resetToSystem() {
         localStorage.removeItem('portfolio-theme');
-        const systemTheme = typeof getSystemTheme === 'function' ? getSystemTheme() : 'light';
+        const systemTheme = typeof getSystemTheme === 'function' ? getSystemTheme() : 'dark';
         this.setTheme(systemTheme);
     }
 
@@ -121,7 +121,7 @@ function updateThemeButton(theme) {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         const currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
-        const themeText = theme === 'light' ? 
+        const themeText = theme === 'dark' ? 
             (currentLanguage === 'fr' ? 'Sombre' : 'Dark') : 
             (currentLanguage === 'fr' ? 'Clair' : 'Light');
         themeBtn.textContent = themeText;
