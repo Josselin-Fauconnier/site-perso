@@ -34,7 +34,13 @@ const trad = {
         'PP': 'Le programmeur pragmatique',
         'coding' : "Langages",
         'tool' : "outils",
-        'book' : "livres"
+        'book' : "livres",
+
+        // Section projet 
+        
+        'project-desc' :"Création d'un portfolio " ,
+        'project-code' : 'Code source du projet',
+
         
 
 
@@ -71,11 +77,17 @@ const trad = {
         // Section connaissances
 
         'h2SW': 'knowledge',
-        'CP': 'clean code',
+        'CP': 'Clean code',
         'PP': 'The pragmatic programmer',
         'coding' :'Computer language',
-        'tool' : 'tools',
-        'book': 'books'
+        'tool' : 'Tools',
+        'book': 'Books',
+
+        // Section projet 
+        
+        'project-desc' : 'Creating a portfolio ',
+        'project-code': 'Project source code',
+        
 
 
     }

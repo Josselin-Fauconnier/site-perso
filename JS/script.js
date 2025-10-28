@@ -1,22 +1,18 @@
-//Initialisation avec français par défaut et détection thème système
-
 (function() {
-    // Fonctions utilitaires
+
     function getSystemTheme() {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     
-    // Récupérer les préférences - SEULEMENT si elles existent explicitement
     const savedTheme = localStorage.getItem('portfolio-theme');
     const savedLanguage = localStorage.getItem('portfolio-language') || 'fr';
     
-    // Appliquer SEULEMENT si sauvegardé explicitement
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
     }
     document.documentElement.lang = savedLanguage;
     
-    // Écouter les changements de préférences système pour le thème
+  
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkModeQuery.addEventListener('change', (e) => {
         // Seulement si l'utilisateur n'a pas de préférence explicite
@@ -49,9 +45,9 @@
         if (themeBtn) {
             themeBtn.textContent = currentTheme === 'Dark' ? 'Light' : 'Dark';
             
-            const titleKey = currentTheme === 'light' ? 'switch-to-dark' : 'switch-to-light';
+            const titleKey = currentTheme === 'Dark' ? 'switch-to-dark' : 'switch-to-light';
             const title = trad[savedLanguage]?.[titleKey] || 
-                         (currentTheme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair');
+                         (currentTheme === 'Dark' ? 'Passer en mode sombre' : 'Passer en mode clair');
             themeBtn.title = title;
         }
         

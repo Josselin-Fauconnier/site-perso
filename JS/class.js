@@ -30,7 +30,6 @@ class LanguageManager {
         }));
     }
     
-    // Méthode pour revenir à la langue par défaut (français)
     resetToDefault() {
         localStorage.removeItem('portfolio-language');
         this.setLanguage('fr');
@@ -60,7 +59,7 @@ class LanguageManager {
 
 class ThemeManager {
     constructor() {
-        // Priorité : localStorage > système > light
+        
         this.currentTheme = localStorage.getItem('portfolio-theme') || 
                            (typeof getSystemTheme === 'function' ? getSystemTheme() : 'dark');
         this.button = document.getElementById('theme-toggle');
@@ -72,7 +71,7 @@ class ThemeManager {
         this.updateButton();
         this.button.addEventListener('click', () => this.toggleTheme());
         
-        // Écouter les changements de langue pour mettre à jour les titres
+      
         document.addEventListener('languageChanged', () => {
             this.updateButton();
         });
@@ -88,12 +87,10 @@ class ThemeManager {
         document.documentElement.setAttribute('data-theme', theme);
         
         this.updateButton();
-        
-        // Sauvegarder la préférence explicite
+    
         localStorage.setItem('portfolio-theme', theme);
     }
     
-    // Méthode pour revenir aux préférences système
     resetToSystem() {
         localStorage.removeItem('portfolio-theme');
         const systemTheme = typeof getSystemTheme === 'function' ? getSystemTheme() : 'dark';
@@ -103,7 +100,7 @@ class ThemeManager {
     updateButton() {
         const currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
         
-        // Utiliser les traductions pour le texte du bouton
+        
         const nextTheme = this.currentTheme === 'light' ? 
             (currentLanguage === 'fr' ? 'Sombre' : 'Dark') : 
             (currentLanguage === 'fr' ? 'Clair' : 'Light');
@@ -116,7 +113,7 @@ class ThemeManager {
     }
 }
 
-// Fonction globale pour mettre à jour le bouton thème (utilisée par script.js)
+
 function updateThemeButton(theme) {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
@@ -132,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const langManager = new LanguageManager();
     const themeManager = new ThemeManager();
     
-    // Optionnel : fonctions pour revenir aux valeurs par défaut
     window.resetThemeToSystem = () => themeManager.resetToSystem();
     window.resetLanguageToDefault = () => langManager.resetToDefault();
 });
