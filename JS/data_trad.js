@@ -6,19 +6,19 @@ const trad = {
         'switch-to-english': 'Passer en anglais',
         'switch-to-dark': 'Passer en mode sombre',
         'switch-to-light': 'Passer en mode clair',
-        
+
         // Texte des boutons 
         'dark-mode': 'Mode Sombre',
         'light-mode': 'Mode Clair',
         'english': 'Anglais',
         'french': 'Français',
-        
+
         // Navigation du site
         'nav-presentation': 'Présentation',
         'nav-skills': 'Connaissances métier',
         'nav-project': 'Dernier projet mis à jour',
         'nav-contact': 'Me contacter',
-        
+
         // Section présentation
 
         'presentation-title': 'Présentation de Josselin Fauconnier',
@@ -32,34 +32,34 @@ const trad = {
         'h2SW': 'Connaissances métier',
         'CP': 'Coder proprement',
         'PP': 'Le programmeur pragmatique',
-        'coding' : "Langages",
-        'tool' : "outils",
-        'book' : "livres",
+        'coding': "Langages",
+        'tool': "outils",
+        'book': "livres",
 
         // Section projet 
-        
-        'project-desc' :"Création d'un portfolio " ,
-        'project-code' : 'Code source du projet',
 
-        
+        'project-desc': "Création d'un portfolio ",
+        'project-code': 'Code source du projet',
+
+
 
 
     },
 
     en: {
         'title-portfolio': 'Portfolio of Josselin Fauconnier',
-        
+
         // Messages d'accessibilité pour les boutons
         'switch-to-french': 'Switch to French',
         'switch-to-dark': 'Switch to dark mode',
         'switch-to-light': 'Switch to light mode',
-        
+
         // Texte des boutons 
         'dark-mode': 'Dark Mode',
         'light-mode': 'Light Mode',
         'english': 'English',
         'french': 'French',
-        
+
         // Navigation du site
         'nav-presentation': 'About me',
         'nav-skills': 'Skills',
@@ -70,7 +70,7 @@ const trad = {
 
         'presentation-title': 'Presentation of Josselin Fauconnier',
 
-        'presentation-intro': 'Hello! I am a trainee developer with 4 months of programming experience.' ,
+        'presentation-intro': 'Hello! I am a trainee developer with 5 months of programming experience.',
 
         'presentation-description': 'Passionate about information science, library science, and biology, I strive to apply a pragmatic approach to programming while continuously improving my skills and following best practices (Green IT, accessibility). My background has helped me develop critical thinking and a deep curiosity about computing and programming as a whole. ',
 
@@ -79,15 +79,15 @@ const trad = {
         'h2SW': 'knowledge',
         'CP': 'Clean code',
         'PP': 'The pragmatic programmer',
-        'coding' :'Computer language',
-        'tool' : 'Tools',
+        'coding': 'Computer language',
+        'tool': 'Tools',
         'book': 'Books',
 
         // Section projet 
-        
-        'project-desc' : 'Creating a portfolio ',
+
+        'project-desc': 'Creating a portfolio ',
         'project-code': 'Project source code',
-        
+
 
 
     }
