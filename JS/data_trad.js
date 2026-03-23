@@ -14,6 +14,7 @@ const trad = {
         'french': 'Français',
 
         // Navigation du site
+        'skip': 'Va directement au contenue principal',
         'nav-presentation': 'Présentation',
         'nav-skills': 'Connaissances métier',
         'nav-project': 'Dernier projet mis à jour',
@@ -23,7 +24,7 @@ const trad = {
 
         'presentation-title': 'Présentation de Josselin Fauconnier',
 
-        'presentation-intro': "Bonjour ! Je suis un développeur en formation avec 4 mois d'expérience en programmation.",
+        'presentation-intro': "Bonjour ! Je suis un développeur en formation avec 10 mois d'expérience en programmation.",
 
         'presentation-description': "Passionné par la science de l'information, la bibliothéconomie et la biologie, j'essaie d'appliquer une approche pragmatique quand je fais de la programmation tout comme je m'efforce d'améliorer mes compétences et cherche à respecter les bonnes pratiques (green it , accesibilité ) . Mon parcours m'a permis de développer un esprit critique et une curiosité pour l'informatique et la programation au sens large.",
 
@@ -61,6 +62,7 @@ const trad = {
         'french': 'French',
 
         // Navigation du site
+        'skip': 'Skip to main content',
         'nav-presentation': 'About me',
         'nav-skills': 'Skills',
         'nav-project': 'Latest project update',
@@ -70,7 +72,7 @@ const trad = {
 
         'presentation-title': 'Presentation of Josselin Fauconnier',
 
-        'presentation-intro': 'Hello! I am a trainee developer with 5 months of programming experience.',
+        'presentation-intro': 'Hello! I am a trainee developer with 10 months of programming experience.',
 
         'presentation-description': 'Passionate about information science, library science, and biology, I strive to apply a pragmatic approach to programming while continuously improving my skills and following best practices (Green IT, accessibility). My background has helped me develop critical thinking and a deep curiosity about computing and programming as a whole. ',
 

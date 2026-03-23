@@ -71,9 +71,14 @@ class ThemeManager {
         this.updateButton();
         this.button.addEventListener('click', () => this.toggleTheme());
 
-
         document.addEventListener('languageChanged', () => {
             this.updateButton();
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('portfolio-theme')) {
+                this.setTheme(e.matches ? 'dark' : 'light');
+            }
         });
     }
 
