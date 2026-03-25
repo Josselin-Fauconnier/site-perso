@@ -76,6 +76,9 @@
     color: #ffffff;
 }
 
+
+/* Préférence accesibilité  */
+
 @media (prefers-color-scheme: dark) {
     .nav-link,
     .nav-link:visited {
@@ -84,6 +87,7 @@
         color: #ffffff;
     }
 }
+
 
 
 body {
@@ -192,11 +196,15 @@ a {
 }
 
 
+
+
+
 .section {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
 }
+
 
 
 
@@ -397,7 +405,7 @@ footer {
     .nav-link {
         padding: 8px 16px;
         font-size: 12px;
-        width: 100%;
+        min-width: 180px;
         text-align: center;
         display: block;
     }
@@ -427,4 +435,25 @@ footer {
     .presentation-content {
         font-size: 1rem;
     }
+}
+
+@media (min-width: 769px) and (max-width: 900px){
+    nav{
+        flex-direction: column;
+    }
+
+    .nav-link{
+        min-width: 180px ;
+        text-align: center;
+    }
+
+    #nav-site ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 15px;
+    }
+
+    
+
 }
