@@ -42,6 +42,9 @@ const trad = {
         'project-desc': "Création d'un portfolio ",
         'project-code': 'Code source du projet',
 
+        // Footer
+
+
 
 
 
@@ -89,6 +92,9 @@ const trad = {
 
         'project-desc': 'Creating a portfolio ',
         'project-code': 'Project source code',
+
+        // Footer
+
 
 
 
