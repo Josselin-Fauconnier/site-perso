@@ -1,49 +1,20 @@
 class LanguageManager {
     constructor() {
-        this.currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
+        this.currentLanguage = document.documentElement.lang || 'fr';
         this.button = document.getElementById('language-toggle');
         this.init();
     }
 
     init() {
-        this.applyTranslations();
         this.updateButton();
-        this.button.addEventListener('click', () => this.toggleLanguage());
+        this.button.addEventListener('click', () => this.goToOtherLanguage());
     }
 
-    toggleLanguage() {
-        const newLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
-        this.setLanguage(newLanguage);
-    }
-
-    setLanguage(language) {
-        this.currentLanguage = language;
-        document.documentElement.lang = language;
-
-        this.applyTranslations();
-        this.updateButton();
-
-        localStorage.setItem('portfolio-language', language);
-
-        document.dispatchEvent(new CustomEvent('languageChanged', {
-            detail: { language }
-        }));
-    }
-
-    resetToDefault() {
-        localStorage.removeItem('portfolio-language');
-        this.setLanguage('fr');
-    }
-
-    applyTranslations() {
-        document.querySelectorAll('[data-translation]').forEach(element => {
-            const key = element.getAttribute('data-translation');
-            const translation = trad[this.currentLanguage]?.[key];
-
-            if (translation) {
-                element.textContent = translation;
-            }
-        });
+    goToOtherLanguage() {
+        const target = this.button.dataset.target;
+        if (target) {
+            window.location.href = target;
+        }
     }
 
     updateButton() {
@@ -70,10 +41,6 @@ class ThemeManager {
     init() {
         this.updateButton();
         this.button.addEventListener('click', () => this.toggleTheme());
-
-        document.addEventListener('languageChanged', () => {
-            this.updateButton();
-        });
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('portfolio-theme')) {
@@ -103,8 +70,7 @@ class ThemeManager {
     }
 
     updateButton() {
-        const currentLanguage = localStorage.getItem('portfolio-language') || 'fr';
-
+        const currentLanguage = document.documentElement.lang || 'fr';
 
         const nextTheme = this.currentTheme === 'light' ?
             (currentLanguage === 'fr' ? 'Sombre' : 'Dark') :
@@ -121,9 +87,8 @@ class ThemeManager {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const langManager = new LanguageManager();
+    new LanguageManager();
     const themeManager = new ThemeManager();
 
     window.resetThemeToSystem = () => themeManager.resetToSystem();
-    window.resetLanguageToDefault = () => langManager.resetToDefault();
 });
