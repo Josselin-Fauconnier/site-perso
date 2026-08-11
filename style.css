@@ -4,23 +4,32 @@
     box-sizing: border-box;
 }
 
-/* Variables par défaut basées sur les préférences système */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
     --button-bg: #f0f0f0;
     --button-text: #333333;
     --button-border: #cccccc;
+
+    
+    --dark-bg: #1a1a1a;
+    --dark-text: #ffffff;
+    --dark-button-bg: #333333;
+    --dark-button-text: #ffffff;
+    --dark-button-border: #555555;
+    --dark-nav-link-bg: #3a3a3a;
+    --dark-nav-link-border: #999999;
+    --dark-nav-link-text: #ffffff;
 }
 
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #1a1a1a;
-        --text-color: #ffffff;
-        --button-bg: #333333;
-        --button-text: #ffffff;
-        --button-border: #555555;
+        --bg-color: var(--dark-bg);
+        --text-color: var(--dark-text);
+        --button-bg: var(--dark-button-bg);
+        --button-text: var(--dark-button-text);
+        --button-border: var(--dark-button-border);
     }
 }
 
@@ -62,18 +71,18 @@
 
 /* Thème sombre explicite (priorité sur prefers-color-scheme) */
 [data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --button-bg: #333333;
-    --button-text: #ffffff;
-    --button-border: #555555;
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --button-bg: var(--dark-button-bg);
+    --button-text: var(--dark-button-text);
+    --button-border: var(--dark-button-border);
 }
 
 [data-theme="dark"] .nav-link,
 [data-theme="dark"] .nav-link:visited {
-    background-color: #3a3a3a;
-    border-color: #999999;
-    color: #ffffff;
+    background-color: var(--dark-nav-link-bg);
+    border-color: var(--dark-nav-link-border);
+    color: var(--dark-nav-link-text);
 }
 
 
@@ -82,9 +91,9 @@
 @media (prefers-color-scheme: dark) {
     .nav-link,
     .nav-link:visited {
-        background-color: #3a3a3a;
-        border-color: #999999;
-        color: #ffffff;
+        background-color: var(--dark-nav-link-bg);
+        border-color: var(--dark-nav-link-border);
+        color: var(--dark-nav-link-text);
     }
 }
 
@@ -165,7 +174,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* Styles pour l'accessibilité */
+
 .theme-btn:focus,
 .language-btn:focus {
     outline: 2px solid #007acc;
@@ -306,6 +315,8 @@ a {
 .project-date {
     opacity: 0.7;
     font-size: 0.95rem;
+    margin: 0 0 16px;
+    text-align: left;
 }
 
 .project-desc {
