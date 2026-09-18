@@ -304,6 +304,10 @@ a {
     margin: 0 auto;
 }
 
+.project-card + .project-card {
+    margin-top: 20px;
+}
+
 .project-header {
     margin-bottom: 10px;
 }
@@ -410,6 +414,11 @@ footer {
         font-size: 12px;
         min-width: 50px;
         width: 100%;
+    }
+
+    .project-actions .theme-btn {
+        width: auto;
+        flex: 1 1 auto;
     }
 
     .nav-link {
