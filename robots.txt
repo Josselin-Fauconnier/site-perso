@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://josselin-fauconnier.students-laplateforme.io/sitemap.xml
+Sitemap: https://josselin-fauconnier.fr/sitemap.xml
